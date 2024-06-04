@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bojanka</title>
+    <title>Paint</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="content">
         <div class="tools">
-            <input type="color" name="colorInput" id="colorInput" onchange="pickColor()">
+            <input type="color" name="colorInput" id="colorInput" onchange="pickColor()" >
             <input type="button" onclick='changeColor("rand")' value="Random Color">
             <input type="button" value="Erase" onclick='changeColor("white")'>
+            <input type="button" value="Color Pick" onclick="colorPick()">
+            <input type="button" value="Clear" onclick="clearCanvas()">
             <span id="size">Canvas Size 75x75</span>
             <input type="range" name="canvasSize" id="canvasSize" oninput="canvasChange()" min="1" max="150">
+            <span id="brush">Brush Size 1</span>
+            <input type="range" min="1" max="2" value="1" id="brushSize" oninput="brushChange()">
         </div>
         <div class="container" id="container">
-            <h1>Bojanka</h1>
+            <h1>Paint</h1>
             <div class="canvas" id="canvas" draggable="false">
 
             </div>
